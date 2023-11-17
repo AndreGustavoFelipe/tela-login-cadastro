@@ -1,0 +1,23 @@
+/*CRIAÇÃO DO SCHEMA NO BANCO DE DADOS MySQL WORKBENCH*/
+
+CREATE SCHEMA `projeto` DEFAULT CHARACTER SET utf8 ;
+
+/*CRIAÇÃO DA TABELA CADASTROS*/
+
+CREATE TABLE `projeto`.`cadastros` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `usuario` VARCHAR(47) NOT NULL,
+  `senha` VARCHAR(47) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+/*MODIFICANDO TABELA CADASTROS*/
+
+ALTER TABLE `projeto`.`cadastros` 
+CHANGE COLUMN `senha` `senha_hashed` VARCHAR(47) NOT NULL ;
+
+
+/*MODIFICANDO TABELA CADASTROS*/
+
+ALTER TABLE `projeto`.`cadastros` 
+CHANGE COLUMN `senha_hashed` `senha_hashed` VARCHAR(255) NOT NULL ;
